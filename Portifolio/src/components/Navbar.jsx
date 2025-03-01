@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
-import "./Fonts.css";
+
 
 const Navbar = () => {
 
