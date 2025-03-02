@@ -1,11 +1,7 @@
 import styled from "styled-components";
 import {Link} from "react-scroll";
 
-
-const Navbar = () => {
-
-
-    const Nav = styled.nav`
+const Nav = styled.nav`
     position: fixed;
     top: 0;
     width: 100%;
@@ -41,6 +37,11 @@ const Navbar = () => {
         }
     }
 `;
+
+const Navbar = () => {
+
+
+    
 
 
     return(

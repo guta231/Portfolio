@@ -58,13 +58,7 @@ const AboutSection = styled.section`
         text-align: center;
         font-family: "Jura", serif;
     }
-    frase{
-        margin-top: 5vh;
-        display: flex;
-        justify-content: center;
-        font-family: "Cormorant Garamond", serif;
-    }
-    credit{
+    div{
         margin-top: 2vh;
         display: flex;
         justify-content: center;
@@ -91,7 +85,7 @@ const About = () => {
             
             <div className="perfil">
                 <Img src={perfil}/>
-                <Fieldset><p>Estudante de Engenharia de Software na FIAP - Faculdade de Informática e Administração Paulista, com amplos conhecimentos gerais em tecnologia e um compromisso contínuo com a aprendizagem. Possuo grande interesse em Engenharia de Dados. Sou flexível e versátil, capaz de me adaptar a diferentes áreas, e tenho uma grande sede por conhecimento.</p><frase>“Eu não sou um programador, sou um solucionador de problemas que usa código."</frase><credit>~Scott Hanselman</credit></Fieldset>
+                <Fieldset><p>Estudante de Engenharia de Software na FIAP - Faculdade de Informática e Administração Paulista, com amplos conhecimentos gerais em tecnologia e um compromisso contínuo com a aprendizagem. Possuo grande interesse em Engenharia de Dados. Sou flexível e versátil, capaz de me adaptar a diferentes áreas, e tenho uma grande sede por conhecimento.</p><div>“Eu não sou um programador, sou um solucionador de problemas que usa código."</div><div>~Scott Hanselman</div></Fieldset>
             </div>
         </AboutSection>
             
