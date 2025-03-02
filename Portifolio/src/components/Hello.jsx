@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
-
-const Hello = () =>{
-
-    const Container = styled.div`
+const Container = styled.div`
     
         display: flex;
         justify-content: center;
@@ -18,14 +15,14 @@ const Hello = () =>{
         font-weight: 700;
         font-family: "Jura", serif;
 
-        border-right: solid 10px #ffffffbe;
+        border-right: solid 5px #ffffffbe;
         white-space: nowrap;
 
         
 
         overflow: hidden;
 
-        animation: mark .8s step-end infinite, write 5s steps(22, end) infinite;
+        animation: mark .8s step-end infinite, write 10s steps(22, end) infinite;
 
 
         @media (min-width: 1283px){
@@ -45,12 +42,10 @@ const Hello = () =>{
             width: 9.3ch;
         }
 
-        70%{
-            width: 9.3ch;
-        }
+        
 
         85%{
-            width: 0;
+            width: 9.3ch;
         }
 
         100%{
@@ -59,11 +54,15 @@ const Hello = () =>{
     }
     `
 
+const Hello = () =>{
+
+    
+
 
 
     return(
         <>
-            <Container>
+            <Container id="about">
 
                 <Msg>Hello World!</Msg>
 

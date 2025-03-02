@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import {Link} from "react-scroll";
 
 
 const Navbar = () => {
@@ -32,20 +32,25 @@ const Navbar = () => {
 
     .link:hover {
         color: #c9c6c6;
+        cursor: pointer;
+    }
+
+    @media (max-width: 1283px){
+        .link{
+            font-size: 14px;
+        }
     }
 `;
 
 
     return(
         <Nav>
-            
             <div>
-            
                 <ul>
-                    
-                    <li><Link className="link" to="/projects">Projects</Link></li>
-                    <li><Link className="link" to="/contacts">Contacts</Link></li>
-                    <li><Link className="link" to="/about">About</Link></li>
+                    <li><Link className="link" to="projetos" smooth="true" duration={500}>Projetos</Link></li>
+                    <li><Link className="link" to="contatos" smooth="true" duration={500}>Contatos</Link></li>
+                    <li><Link className="link" to="skills" smooth="true" duration={500}>Habilidades</Link></li>
+                    <li><Link className="link" to="about" smooth="true" duration={500}>Sobre</Link></li>
                 </ul>
             </div>
         </Nav>

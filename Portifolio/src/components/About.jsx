@@ -1,11 +1,7 @@
 import styled from "styled-components";
 import perfil from "../assets/87510192_sem_fundo.png";
 
-
-const About = () => {
-
-
-    const AboutSection = styled.section`
+const AboutSection = styled.section`
         display: flex;
         
         justify-content: center;
@@ -35,19 +31,28 @@ const About = () => {
     const Img = styled.img`
         
         border-bottom: 3px solid #1871e6;
+        border-right: 3px solid #1871e6;
         scale: 100%;
         border-radius: 10%;
         transform: scaleX(-1);
-        
+        background: linear-gradient(344deg, rgba(33,27,126,1) 0%, rgba(16,16,62,1) 45%, rgba(13,126,149,1) 100%);
     
+
+        @media (max-width: 1283px){
+            scale: 80%;
+        }
     `
+
     const Fieldset = styled.fieldset`
         color: #f2f2f2;
         height: 35vh;
         width: 50vw;
         scale: 90%;
-        border: 2px solid #4d4c4c;
-        background-color: #1e1d1d;
+        border: none;
+        border-bottom: solid 1px;
+        border-top: solid 1px;
+        border-radius: 3%;
+        background-color: #05051d3b;
     p{
         margin: 10px;
         text-align: center;
@@ -72,6 +77,11 @@ const About = () => {
         margin-left: 10%;
     }
     `
+
+const About = () => {
+
+
+    
 
 
 
