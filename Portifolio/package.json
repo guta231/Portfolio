@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "cd Portifolio && npm run dev",
-    "build": "cd Portifolio && npm run build",
-    "start": "cd Portifolio && npm start",
+    "dev": "npm --prefix Portifolio run dev",
+    "build": "npm --prefix Portifolio run build",
+    "start": "npm --prefix Portifolio start",
     "lint": "eslint .",
     "preview": "vite preview"
     
