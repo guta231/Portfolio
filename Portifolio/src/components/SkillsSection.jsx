@@ -13,10 +13,9 @@ const SkillsContainer = styled.div`
     justify-content: center;
     align-items: center;
     transition: opacity 1s ease-in-out;
-
+    
 fieldset{
     background-color: #05051d3b;
-    height: 30vh;
     width: 90%;
     border: none;
     border-top: solid 2px #f2f2f2;
@@ -25,6 +24,10 @@ fieldset{
 }
 &.in-view{
     opacity: 1;
+}
+
+@media (max-width: 1283px){
+    margin-top: 10vh;
 }
 `
 const SkillsContent = styled.div`

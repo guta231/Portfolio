@@ -11,7 +11,7 @@ const ContentContainer = styled.div`
 
 const Content = styled.div`
     color: #bdd4f7;
-    font-size: 2rem;
+    font-size: 1.8rem;
     border-right: solid 5px #f2f2f2be;
     opacity: 0;
     transition: opacity 1s ease-in-out;

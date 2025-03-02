@@ -4,11 +4,12 @@ import { useInView } from "react-intersection-observer";
 import ImgVigilRace1 from "../assets/VigilRace_team.jpg";
 import ImgVigilRace2 from "../assets/Imagem_VigilRace2.jpg";
 import ImgVigilRace3 from "../assets/imagem_VigilRace3.jpg";
+import ImgAlgaTech1 from "../assets/imagem_AlgaTech1.jpeg";
+import ImgAlgaTech2 from "../assets/imagem_AlgaTech2.jpeg";
+import ImgAlgaTech3 from "../assets/imagem_AlgaTech3.jpeg";
 
 const ProjetosContainer = styled.section`
-    
     padding: 10px;
-
 `;
 
 const Projeto = styled.div`
@@ -60,11 +61,11 @@ const Projeto = styled.div`
         border-bottom: solid 1px #f2f2f2;
         border-radius: 3%;
         background-color: #05051d3b;
-        height: 80%;
         width: 35vw;
     }
     p{
         margin-top: 2vh;
+        margin-bottom: 2vh;
         font-family: "Jura", serif;
     }
 
@@ -100,22 +101,37 @@ const Projeto = styled.div`
 `;
 
 const ProjetosSection = () => {
+    const imagensAlgaTech = [ImgAlgaTech1, ImgAlgaTech2, ImgAlgaTech3];
+    const [imagemAlgaTech, setImagemAlgaTech] = useState(0);
     const imagens = [ImgVigilRace1, ImgVigilRace2, ImgVigilRace3];
     const [imagemAtual, setImagemAtual] = useState(0);
     const [fade, setFade] = useState(true);
+    const [fadeAlgaTech, setFadeAlgaTech] = useState(true);
 
     useEffect(() => {
         const trocaImagem = () => {
-            setFade(false); // Inicia o fade-out
-
+            setFade(false);
             setTimeout(() => {
                 setImagemAtual((prev) => (prev + 1) % imagens.length);
-                setFade(true); // Ativa o fade-in após mudar a imagem
-            }, 500); // Tempo da animação do fade-out antes de trocar a imagem
+                setFade(true);
+            }, 500);
         };
 
         const intervalo = setInterval(trocaImagem, 3000);
         return () => clearInterval(intervalo);
+    }, []);
+
+    useEffect(() => {
+        const trocaImagemAlgaTech = () => {
+            setFadeAlgaTech(false);
+            setTimeout(() => {
+                setImagemAlgaTech((prev) => (prev + 1) % imagensAlgaTech.length);
+                setFadeAlgaTech(true);
+            }, 500);
+        };
+
+        const intervaloAlgaTech = setInterval(trocaImagemAlgaTech, 3000);
+        return () => clearInterval(intervaloAlgaTech);
     }, []);
 
     const { ref, inView } = useInView({
@@ -147,24 +163,21 @@ const ProjetosSection = () => {
             <Projeto ref={ref} className={inView ? "in-view" : ""}>
                 <div className="container">
                     <div className="image-container">
-                        {imagens.map((img, index) => (
+                        {imagensAlgaTech.map((img, index) => (
                             <img
                                 key={index}
                                 src={img}
-                                alt="Imagem do VigilRace"
-                                className={index === imagemAtual && fade ? "fade-in" : ""}
+                                alt="Imagem do AlgaTech"
+                                className={index === imagemAlgaTech && fadeAlgaTech ? "fade-in" : ""}
                             />
                         ))}
                     </div>
                     <h1>AlgaTech</h1>
-                    <fieldset><p>Projeto desenvolvido para a Global Solution - 2º semestre de 2024, com o tema "Green Energy - energia limpa para um futuro mais sustentável", em parceria com empresas como SAP, Ultragaz e Pacto Global.
-
-A solução consiste em uma automação autossustentável para o processo de produção de biocombustíveis a partir de microalgas. <br/><br/>Geração de energia solar: para garantir a autossustentabilidade do sistema;
+                    <fieldset><p>Projeto desenvolvido para a Global Solution - 2º semestre de 2024, com o tema "Green Energy - energia limpa para um futuro mais sustentável", em parceria com empresas como SAP, Ultragaz e Pacto Global.<br/><br/>Geração de energia solar: para garantir a autossustentabilidade do sistema;
 IoT (Internet of Things): para comunicação e monitoramento das microalgas;
 Eletrofloculação: para otimizar o processo de coleta das algas.</p></fieldset>
                 </div>
             </Projeto>
-            
         </ProjetosContainer>
     );
 };

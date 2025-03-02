@@ -16,7 +16,7 @@ const SkillContainer = styled.div`
 const ContentSkill = styled.div`
 
     color: #bdd4f7;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: "Jura", serif;
     border-right: solid 5px #f2f2f2de;
     animation: mark .8s step-end infinite;
