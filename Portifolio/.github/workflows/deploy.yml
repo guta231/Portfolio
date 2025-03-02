@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Instalar dependências
-        run: npm install
+        run: npm ci  # Usa 'ci' para um build mais confiável
 
       - name: Build do projeto
         run: npm run build
@@ -23,4 +23,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: build
+          folder: dist  # O Vite gera o build na pasta 'dist'
+          clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}
